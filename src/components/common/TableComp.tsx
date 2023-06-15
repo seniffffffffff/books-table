@@ -1,24 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { TableDataProps, TableRowsNames } from "../../interfaces/interfaces";
-import TableDataList from "./TableDataListComp";
-import TableRowComp from "./TableRowComp";
+import TableDataListComp from "./TableDataList";
+import TableRowComp from "./TableRow";
 import TableBody from "@mui/material/TableBody";
 
-const TableComp: React.FC<TableDataProps> = ({ booksData, setAuthor }) => {
-  //   useEffect(() => {
-  //     axios
-  //       .get(
-  //         // `https://www.googleapis.com/books/v1/volumes?q=${"harry"}&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU&maxResults=40`
-  //         `https://www.googleapis.com/books/v1/volumes?q=inauthor:${`stephen-king`}&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU`
-  //       )
-  //       .then((res) => console.log(res.data.items));
-  //   }, []);
-
+const TableComp: React.FC<TableDataProps> = ({ tableData }) => {
   const tableRowsNames: TableRowsNames[] = [
     { rowName: "Book name" },
     { rowName: "ID" },
@@ -31,7 +22,7 @@ const TableComp: React.FC<TableDataProps> = ({ booksData, setAuthor }) => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "black",
+        backgroundColor: "#353a40",
       }}
       component={Paper}
     >
@@ -42,7 +33,7 @@ const TableComp: React.FC<TableDataProps> = ({ booksData, setAuthor }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableDataList setAuthor={setAuthor} booksData={booksData} />
+          <TableDataListComp tableData={tableData} />
         </TableBody>
       </Table>
     </TableContainer>

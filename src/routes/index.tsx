@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Home from "../components/page/Home";
-import InfoBook from "../components/page/InfoBook";
+import Home from "../components/pages/Home";
+import AuthorBooks from "../components/pages/AuthorBooks";
+import BookInfo from "../components/pages/BookInfo";
 
 export const BrowserRouter = createBrowserRouter([
   {
@@ -9,11 +10,11 @@ export const BrowserRouter = createBrowserRouter([
   },
   {
     path: "/books/:author",
-    element: <Home />,
+    element: <AuthorBooks />,
   },
   {
     path: "/books/:author/:book",
-    element: <InfoBook />,
+    element: <BookInfo />,
   },
   {
     path: "*",
