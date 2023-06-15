@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
-import TableBooks from "../common/TableBooks";
-import BreadcrumbsComp from "../layout/BreadcrumbsComp";
+import React from "react";
+import BreadcrumbsComp from "../common/BreadcrumbsComp";
+import TableAuthorBooks from "../AuthorBooks/TableAuthorBooks";
 
-const Home = () => {
+const AuthorBooks = () => {
   return (
     <Box
       sx={{
@@ -14,10 +14,10 @@ const Home = () => {
     >
       <Box>
         <BreadcrumbsComp />
-        <TableBooks />
+        <TableAuthorBooks />
       </Box>
     </Box>
   );
 };
 
-export default Home;
+export default AuthorBooks;

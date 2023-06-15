@@ -44,10 +44,7 @@ interface ReadingModes {
   text: boolean;
 }
 
-export interface TableDataProps {
-  booksData: BooksData[];
-  setAuthor: React.Dispatch<React.SetStateAction<string[]>>;
-}
+
 
 interface ImageLinks {
   smallThumbnail: string;
@@ -64,7 +61,9 @@ export interface TableRowsProps {
 
 export interface AuthorsProps {
   authors: string[];
-  setAuthor: any;
 }
 
 
+export interface  TableDataProps {
+  tableData: BooksData[];
+}
